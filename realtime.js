@@ -98,7 +98,7 @@ onAuthStateChanged(auth, (user) => {
           const adBox = document.createElement("div");
           adBox.classList.add("pro");
           adBox.innerHTML = `
-            <img src="${ad.image || ''}" alt="${ad.title}">
+            <img src="${ad.image || ''}" alt="${ad.title}" loading="lazy">
             <div class="des">
               <span>${ad.category}</span>
               <h5>${ad.title}</h5>
