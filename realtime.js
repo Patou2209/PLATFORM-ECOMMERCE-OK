@@ -56,7 +56,7 @@ onAuthStateChanged(auth, (user) => {
       };
 
       // Validate form fields
-      if (!title || !category || !price || (editingAdId && !imageData)) {
+      if (!title || !category || !price || !imageData) {
         alert("Please fill in all fields.");
         return;
       } // Validate price

@@ -32,13 +32,19 @@
 </section>
 
 <div class="posting">
-  <h4>Bienvenue, <span id="user-name"></span> !</h4>
+  <h5 style="text-align: center;">Bienvenue, <span id="user-name"></span> !</h5>
   <button id="logout-btn" class="normal" style="background-color: rgb(122, 35, 35); color: white; margin-top: 15px;">Déconnexion</button>
 
   <div class="posting-form">
     <p style="text-align: center;">Publier un article</p>
     <form id="ad-form">
-      <input type="text" id="ad-category" class="form-control" placeholder="Categorie" required>
+      <select id="ad-category" class="form-control">
+        <option value="">Sélectionner une catégorie</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Habillement">Habillement</option> 
+        <option value="Voiture">Voiture</option>
+        <option value="Immobilier">Immobilier</option>
+      </select>
       <textarea id="ad-title" class="form-control" placeholder="Titre de l'annonce" required></textarea>
       <input type="number" id="ad-price" class="form-control" placeholder="Prix" required>
       <input type="file" id="ad-image" class="form-control" accept="image/*">

@@ -97,6 +97,27 @@ body {
   justify-content: center;
 
 }
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+.search input,
+.search select {
+  padding: 10px 20px;
+  border: 1px solid #cce7d0;
+  border-radius: 10px;
+  outline: none;
+}
+.search input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.search select {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
 
 #navbar li {
   list-style: none;
@@ -1165,7 +1186,8 @@ footer .copyright{
   #login-box input,
   #signup-box input,
   .posting-form input, 
-  .posting-form textarea {
+  .posting-form textarea,
+  #ad-form select {
     width:100%;
     padding: 12px 15px;
     outline: none;

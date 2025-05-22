@@ -41,30 +41,20 @@
         
     </section>
 
-    <section id="" class="section-p1">
-        <div class="container" id="filtre-container">
+    <div class="search">
         
-            <div class="row">
-                <!-- Select catégorie -->
-                <div class="col-md-4">
-                    <select id="sort-ads" class="form-control">
-                        <option value="">Toutes les catégories</option>
-                        <option value="Electronics">Electronics</option>
-                        <option value="Habit">Habit</option>
-                        <option value="Voiture">Voiture</option>
-                        <option value="Immobilier">Immobilier</option>
-                    </select>
-                </div>
-    
-                <!-- Barre de recherche -->
-                <div class="col-md-8">
-                    <input type="text" id="search-bar" class="form-control" placeholder="Rechercher un article...">
-                </div>
-            </div>
-    
+        <input type="text" id="search-bar" class="form-control" placeholder=' Rechercher un produit'>
+        <div class="filtre">
+            <select id="sort-ads" class="form-control">
+                <option value="">Toutes les catégories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Habillement">Habillement</option>
+                <option value="Voiture">Voiture</option>
+                <option value="Immobilier">Immobilier</option>
+            </select>
         </div>
-    </section>
-
+    </div>
+    
     <section id="product1" class="section-p1">
         <!--
         The products are injected here by using JacaScript DOM and Realtime firebase
