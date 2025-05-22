@@ -55,6 +55,16 @@ onAuthStateChanged(auth, (user) => {
         createdAt: Date.now()
       };
 
+      // Validate form fields
+      if (!title || !category || !price || (editingAdId && !imageData)) {
+        alert("Please fill in all fields.");
+        return;
+      } // Validate price
+      if (isNaN(price) || price <= 0) {
+        alert("Please enter a valid price.");
+        return;
+      }
+
       if (editingAdId) {
         await update(ref(database, `ads/${editingAdId}`), ad);
         editingAdId = null;
