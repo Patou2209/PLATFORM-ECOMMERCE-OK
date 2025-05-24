@@ -45,6 +45,14 @@ onAuthStateChanged(auth, (user) => {
     const price = document.getElementById("ad-price").value;
     const imageInput = document.getElementById("ad-image").files[0];
 
+    const userId = auth.currentUser.uid;
+    const dbRef = ref(getDatabase());
+    const userSnap = await get(child(dbRef, `users/${userId}`));
+    let number = "";
+    if (userSnap.exists()) {
+      number = userSnap.val().number || "";
+    }
+
     const saveAd = async (imageData) => {
       const ad = {
         category,
@@ -52,7 +60,8 @@ onAuthStateChanged(auth, (user) => {
         price,
         image: imageData || null,
         userEmail: user.email,
-        createdAt: Date.now()
+        createdAt: Date.now(),
+        number
       };
 
       // Validate form fields
@@ -108,6 +117,7 @@ onAuthStateChanged(auth, (user) => {
                 <i class="fas fa-star"></i>
               </div>
               <h4>${ad.price}€</h4>
+              <p>Numéro: ${ad.number ? `<a href="tel:${ad.number}">${ad.number}</a>` : "Non renseigné"}</p>
             </div>
             <button class="normal" id="green" onclick="editAd('${adId}')">Modifier</button>
             <button class="normal" id="red" onclick="deleteAd('${adId}')">Supprimer</button>

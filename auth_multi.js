@@ -4,8 +4,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebas
       signInWithEmailAndPassword,
       createUserWithEmailAndPassword
     } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js";
 
     const firebaseConfig = {
+      databaseURL: "https://platform-ecommerce-df85c-default-rtdb.asia-southeast1.firebasedatabase.app",
       apiKey: "AIzaSyCTr5mfSr6aDgC8ekkmHxCHGg8BhmnWhpA",
       authDomain: "platform-ecommerce-df85c.firebaseapp.com",
       projectId: "platform-ecommerce-df85c",
@@ -19,8 +21,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebas
 
     // Connexion (corrigé : bons IDs)
     document.getElementById("login-btn").addEventListener("click", () => {
-      const email = document.getElementById("email").value.trim(); // <-- ID correct
-      const password = document.getElementById("password").value.trim(); // <-- ID correct
+      const email = document.getElementById("email").value.trim(); 
+      const password = document.getElementById("password").value.trim(); 
+      const number = document.getElementById("signup-num").value.trim(); 
       const message = document.getElementById("message");
 
       if (!email || !password) {
@@ -47,9 +50,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebas
     document.getElementById("signup-btn").addEventListener("click", () => {
       const email = document.getElementById("signup-email").value.trim();
       const password = document.getElementById("signup-password").value.trim();
+      const number = document.getElementById("signup-num").value.trim();
       const message = document.getElementById("signup-message");
 
-      if (!email || !password) {
+      if (!email || !password || !number) {
         message.textContent = "Veuillez remplir tous les champs.";
         return;
       }
@@ -62,7 +66,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebas
 
 
       createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
+        .then((userCredential) => {
+          const user = userCredential.user;
+          const db = getDatabase();
+          set(ref(db, 'users/' + user.uid), {
+            email: email,
+            number: number
+          });
           message.style.color = "green";
           message.textContent = "Inscription réussie. Vous pouvez vous connecter.";
         })
