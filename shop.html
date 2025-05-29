@@ -7,31 +7,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Shop </title>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="search_bar.css">
     </head>
 
     <body>
 
     <section id="header">
-        <a href="#"><img src="img/logo.png" alt="" class="logo"></a>
+        <p class="logoTexte" title="Home Page"><span id="E-logo">E</span>-Teka</p>
+
+        <div class="search">
+                <i class="fa fa-search" id="search-icon" title="cliquez pour Rechercher un produit"></i>
+                <input type="text" id="search-bar" placeholder="Recherche" class="form-control" >
+          <div class="filtre">
+            <select id="sort-ads" class="form-control">
+                <option value="" title="Tous les produits"></option>
+                <option value="Electronics" title="Produits électroniques">Electronics</option>
+                <option value="Habillement" title="Vêtements et accessoires">Habillement</option>
+                <option value="Voiture" title="Véhicules et accessoires">Voiture</option>
+                <option value="Immobilier" title="Biens immobiliers">Immobilier</option>
+            </select>
+          </div>
+        </div>
+
+
         <div>
             <ul id="navbar">
-                <li><a  href="index.html">Home</a></li>
-                <li><a  href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="contact.html">contact</a></li>
-                <li id="bag"><a href="cart.html"><i class="fa fa-shopping-bag "  aria-hidden="true"></i>
-                </a></li>
+                <li><a href="connexion.html"><i class="fa fa-user-circle" aria-hidden="true" title="Se connecter"></i></a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true" title="Mon panier"></i></a></li>
+                <li><a href="auth_multi_users.html">S'enregistrer</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="contact.html">Aide</a></li>
                 <a href="#" id="close"><i class="far fa-times"></i></a>
             </ul>
         </div>
+
         <div class="mobile">
-            <a href="cart.html"><i class="fas fa-shopping-bag" aria-hidden="true"></i>
-            </a>
-            <i id="bar" class="fas fa-outdent"></i>
-            
+            <a href="connexion.html"><i class="fa fa-user-circle" aria-hidden="true" title="Se connecter"></i></a>
+            <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true" title="Mon panier"></i></a>
+            <i id="bar" class="fa fa-bars" aria-hidden="true" title="Menu"></i>
+
         </div>
     </section>
 
@@ -41,19 +57,6 @@
         
     </section>
 
-    <div class="search">
-        
-        <input type="text" id="search-bar" class="form-control" placeholder=' Rechercher un produit'>
-        <div class="filtre">
-            <select id="sort-ads" class="form-control">
-                <option value="">Toutes les catégories</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Habillement">Habillement</option>
-                <option value="Voiture">Voiture</option>
-                <option value="Immobilier">Immobilier</option>
-            </select>
-        </div>
-    </div>
     
     <section id="product1" class="section-p1">
         <!--
@@ -88,8 +91,9 @@
     </body>
 
     <footer class="section-p1">
+        <p class="logoTexte" title="Home Page" style="user-select: none;"><span id="E-logo">E</span>-Teka</p>
         <div class="col">
-            <img class="logo" src="img/logo.png" alt="">
+            
             <h4>Contact</h4>
             <p><strong>Address:</strong> 123 Street, New York, USA</p>
             <p><strong>Phone:</strong> +01 234 567 88</p>
@@ -115,7 +119,7 @@
         </div>
         <div class="col">
             <h4>My Account</h4>
-            <a style="color: brown;" href="auth_multi_users.html"><b>Get connected</b></a>
+            <a style="color: rgb(179, 160, 77);" href="connexion.html"><b>Se connecter</b></a>
         </div>
         <div class="col install">
             <h4>Install App</h4>
@@ -132,7 +136,6 @@
             <p>Designed by <span>TECHNOWEB</span></p>
         </div>
     </footer>
-
     
     
     <script type="module">
@@ -260,6 +263,7 @@
         });
     </script>
     <script src="script.js" type="module"></script>
+    <script  src="script.js"></script>
    
 
 </html>

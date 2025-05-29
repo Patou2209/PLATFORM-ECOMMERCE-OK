@@ -27,6 +27,19 @@ body, h1, h2, h3, h4, h5, h6 {
 p {
     margin: 2px 0;
 }
+#header .logoTexte {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+#header .logoTexte span {
+    
+    color: rgb(179, 160, 77);
+    
+}
 .fa-map-marker {
     color: #f00;
     font-size: 1.5rem;
@@ -106,19 +119,9 @@ p {
 .hero-buttons button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-#search-bar input-box {
-    padding: 8px;
-    width: 100%;
-    border: #007bff !important;
-    border-radius: 5px;
-    margin: 0 auto;
-}
-.search-container {
-    border: #007bff !important;
-}
+
 .categories {
     display: flex;
-    
     justify-content: center;
     gap: 1rem;  
 }
