@@ -30,6 +30,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebas
       const number = document.getElementById("signup-num").value.trim();
       const message = document.getElementById("signup-message");
 
+
       if (!email || !password || !number) {
         message.textContent = "Veuillez remplir tous les champs.";
         return;
@@ -41,7 +42,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebas
       message.textContent = "Adresse email invalide.";
       return;
     }
-    
 
 
       createUserWithEmailAndPassword(auth, email, password)
@@ -65,6 +65,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebas
           }
         });
     });
+
 
 
     
