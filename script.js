@@ -36,3 +36,6 @@ document.querySelectorAll('.logoTexte').forEach(item => {
 
 
 
+
+
+
