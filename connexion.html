@@ -60,6 +60,7 @@
   </div>
 
   <hr>
+  <button type="submit" id="submit">Submit</button>
 
   <footer class="section-p1">
         <p class="logoTexte" title="Home Page" style="user-select: none;"><span id="E-logo">E</span>-Teka</p>
@@ -115,6 +116,52 @@
   <script type="module" src="connect.js"></script>
   <script  src="script.js"></script>
 
+  <script>
+    //const button= document.getElementById('submit');
+   /* button.addEventListener('click', function() {
+      if (button.innerHTML === "submit") {
+        button.innerHTML = "Submitted";
+      } else {
+        button.innerHTML = "submit";
+      }
+    })*/
+  </script>
+  
+  <script>
+    //switch  statement exemple
+    const button= document.getElementById('submit');
+    button.addEventListener('click', function() {
+
+      switch (button.innerHTML) {
+        case "submit":
+          button.innerHTML = "Submitted"; 
+          break;
+        default:
+          button.innerHTML = "submit";
+      }
+    })
+  </script>
+
+  <script>
+    // Example of using a switch statement 
+    let jour = "mardi";
+
+      switch (jour) {
+        case "lundi":
+          console.log("Début de semaine");
+          break;
+        case "mardi":
+          console.log("Courage, c’est mardi !");
+          break;
+        case "vendredi":
+          console.log("Presque le week-end !");
+          break;
+        default:
+          console.log("Jour non reconnu");
+      }
+
+  </script>
+ 
 
 </body>
 </html>
